@@ -1,0 +1,1 @@
+This is automatically generates a name in Korean. Only Korean.
