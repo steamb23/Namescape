@@ -1,1 +1,1 @@
-This is automatically generates a name in Korean. Only Korean.
+﻿랜덤으로 한국어로된 이름을 생성합니다. 영어도 되긴 하지만 기본적으로는 한국어를 사용합니다.
