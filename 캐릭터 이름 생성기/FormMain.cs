@@ -9,11 +9,18 @@ using System.Windows.Forms;
 
 namespace CharacterNameGenerator
 {
-    public partial class CNG_Form : Form
+    public partial class FormMain : Form
     {
-        public CNG_Form()
+        public FormMain()
         {
             InitializeComponent();
+        }
+        int CharLength
+        {
+            get
+            {
+                return (int)this.charLength.Value;
+            }
         }
 
         private void CNG_Form_Load(object sender, EventArgs e)
@@ -23,28 +30,34 @@ namespace CharacterNameGenerator
         private void buttonComplete_Click(object sender, EventArgs e)
         {
             Algorithm.IAlgorithm algorithm = null;
+            string result = "a";
             //알고리즘 구분 :)
-            if (algorithmRadio_Random.Checked)
+
+            if (algorithmRadio_Unicode.Checked)
             {
-                algorithm = new Algorithm.Mod.AlgoRandom();
+                algorithm = new Algorithm.Mod.AlgoUnicode(new Setting(this.charLength.Value));
             }
-            else if (algorithmRadio_Unicode.Checked)
-            {
-                algorithm = new Algorithm.Mod.AlgoUnicode();
-            }
-            //null인지 체크하고 ㄱㄱ
+            //null인지 체크
+#if DEBUG
+            result = algorithm.Run();
+#else
             try
             {
                 algorithm.Run();
             }
             catch(NullReferenceException except)
             {
-                Dialog.Oops(except, "선택한 알고리즘을 확인해주세요.");
+                Dialog.Oops(except);
             }
             catch(NotImplementedException except)
             {
-                Dialog.Oops(except, "제작자가 멍청하네요. (본인 디스)");
+                Dialog.Oops(except, "제작자가 깜박한듯 -ㅅ-");
             }
+#endif
+            //Console.WriteLine(result);
+            Clipboard.SetText(result);
+            ResultBox.Text = result;
+
         }
     }
 }

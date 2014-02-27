@@ -1,6 +1,6 @@
 ﻿namespace CharacterNameGenerator
 {
-    partial class CNG_Form
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -38,13 +38,14 @@
             this.charLength = new System.Windows.Forms.NumericUpDown();
             this.algorithmBox = new System.Windows.Forms.GroupBox();
             this.algorithmPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.algorithmRadio_Random = new System.Windows.Forms.RadioButton();
             this.algorithmRadio_Unicode = new System.Windows.Forms.RadioButton();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonComplete = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button_Create = new System.Windows.Forms.Button();
+            this.ResultBox = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.복사ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_Setting.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -52,6 +53,7 @@
             this.algorithmBox.SuspendLayout();
             this.algorithmPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_Setting
@@ -135,7 +137,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.charLength.Location = new System.Drawing.Point(68, 3);
             this.charLength.Maximum = new decimal(new int[] {
-            9999,
+            999999,
             0,
             0,
             0});
@@ -168,7 +170,6 @@
             // algorithmPanel
             // 
             this.algorithmPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.algorithmPanel.Controls.Add(this.algorithmRadio_Random);
             this.algorithmPanel.Controls.Add(this.algorithmRadio_Unicode);
             this.algorithmPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.algorithmPanel.Location = new System.Drawing.Point(7, 23);
@@ -176,23 +177,10 @@
             this.algorithmPanel.Size = new System.Drawing.Size(453, 78);
             this.algorithmPanel.TabIndex = 0;
             // 
-            // algorithmRadio_Random
-            // 
-            this.algorithmRadio_Random.AutoSize = true;
-            this.algorithmRadio_Random.Enabled = false;
-            this.algorithmRadio_Random.Location = new System.Drawing.Point(3, 3);
-            this.algorithmRadio_Random.Name = "algorithmRadio_Random";
-            this.algorithmRadio_Random.Size = new System.Drawing.Size(49, 19);
-            this.algorithmRadio_Random.TabIndex = 0;
-            this.algorithmRadio_Random.TabStop = true;
-            this.algorithmRadio_Random.Text = "랜덤";
-            this.toolTip.SetToolTip(this.algorithmRadio_Random, "Random.txt파일의 글자를 랜덤으로 조합합니다.\r\n(작동안됨)");
-            this.algorithmRadio_Random.UseVisualStyleBackColor = true;
-            // 
             // algorithmRadio_Unicode
             // 
             this.algorithmRadio_Unicode.AutoSize = true;
-            this.algorithmRadio_Unicode.Location = new System.Drawing.Point(3, 28);
+            this.algorithmRadio_Unicode.Location = new System.Drawing.Point(3, 3);
             this.algorithmRadio_Unicode.Name = "algorithmRadio_Unicode";
             this.algorithmRadio_Unicode.Size = new System.Drawing.Size(73, 19);
             this.algorithmRadio_Unicode.TabIndex = 1;
@@ -224,34 +212,52 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "도움말";
             // 
-            // buttonComplete
+            // button_Create
             // 
-            this.buttonComplete.Location = new System.Drawing.Point(12, 271);
-            this.buttonComplete.Name = "buttonComplete";
-            this.buttonComplete.Size = new System.Drawing.Size(466, 37);
-            this.buttonComplete.TabIndex = 4;
-            this.buttonComplete.Text = "생성";
-            this.toolTip.SetToolTip(this.buttonComplete, "설정된 값에 따라 이름을 생성하고 클립보드에 추가합니다.");
-            this.buttonComplete.UseVisualStyleBackColor = true;
-            this.buttonComplete.Click += new System.EventHandler(this.buttonComplete_Click);
+            this.button_Create.Location = new System.Drawing.Point(12, 271);
+            this.button_Create.Name = "button_Create";
+            this.button_Create.Size = new System.Drawing.Size(466, 37);
+            this.button_Create.TabIndex = 4;
+            this.button_Create.Text = "생성";
+            this.toolTip.SetToolTip(this.button_Create, "설정된 값에 따라 이름을 생성하고 클립보드에 추가합니다.");
+            this.button_Create.UseVisualStyleBackColor = true;
+            this.button_Create.Click += new System.EventHandler(this.buttonComplete_Click);
             // 
-            // richTextBox1
+            // ResultBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 314);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(466, 124);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
-            this.toolTip.SetToolTip(this.richTextBox1, "생성된 이름은 이곳에 표시됩니다.");
+            this.ResultBox.ContextMenuStrip = this.contextMenuStrip1;
+            this.ResultBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ResultBox.DetectUrls = false;
+            this.ResultBox.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ResultBox.Location = new System.Drawing.Point(12, 314);
+            this.ResultBox.Name = "ResultBox";
+            this.ResultBox.ReadOnly = true;
+            this.ResultBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.ResultBox.Size = new System.Drawing.Size(466, 124);
+            this.ResultBox.TabIndex = 5;
+            this.ResultBox.Text = "";
+            this.toolTip.SetToolTip(this.ResultBox, "생성된 이름은 이곳에 표시됩니다.");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.복사ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 26);
+            // 
+            // 복사ToolStripMenuItem
+            // 
+            this.복사ToolStripMenuItem.Name = "복사ToolStripMenuItem";
+            this.복사ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.복사ToolStripMenuItem.Text = "복사(&C)";
             // 
             // CNG_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 450);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.buttonComplete);
+            this.Controls.Add(this.ResultBox);
+            this.Controls.Add(this.button_Create);
             this.Controls.Add(this.algorithmBox);
             this.Controls.Add(this.groupBox_Setting);
             this.Controls.Add(this.menuStrip);
@@ -274,6 +280,7 @@
             this.algorithmPanel.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,16 +293,17 @@
         private System.Windows.Forms.NumericUpDown charLength;
         private System.Windows.Forms.GroupBox algorithmBox;
         private System.Windows.Forms.FlowLayoutPanel algorithmPanel;
-        private System.Windows.Forms.RadioButton algorithmRadio_Random;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.RadioButton algorithmRadio_Unicode;
-        private System.Windows.Forms.Button buttonComplete;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button_Create;
+        private System.Windows.Forms.RichTextBox ResultBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.CheckBox isSpacePermit;
         private System.Windows.Forms.Label miscSetting_Label;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 복사ToolStripMenuItem;
     }
 }

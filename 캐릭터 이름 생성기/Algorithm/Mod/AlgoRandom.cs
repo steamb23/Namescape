@@ -7,6 +7,11 @@ namespace CharacterNameGenerator.Algorithm.Mod
 {
     class AlgoRandom:IAlgorithm
     {
+        public AlgoRandom(Setting obj)
+        {
+            
+        }
+
         string IAlgorithm.Run()
         {
             throw new NotImplementedException();
