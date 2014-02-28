@@ -59,5 +59,11 @@ namespace Namescape
             ResultBox.Text = result;
 
         }
+
+        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
     }
 }
