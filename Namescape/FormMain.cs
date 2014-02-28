@@ -39,7 +39,7 @@ namespace Namescape
             }
             //null인지 체크
 #if DEBUG
-            result = algorithm.Run();
+            result = algorithm.Result;
 #else
             try
             {

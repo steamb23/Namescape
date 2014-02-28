@@ -11,10 +11,12 @@ namespace Namescape.Algorithm.Mod
         {
             
         }
-
-        string IAlgorithm.Run()
+        string IAlgorithm.Result
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

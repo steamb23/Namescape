@@ -16,14 +16,17 @@ namespace Namescape.Algorithm.Mod
             charLength = setting.CharLength;
         }
 
-        string IAlgorithm.Run()
+        string IAlgorithm.Result
         {
-            //name[0] = (char)rnd.Next(0xAC00, 0xD7A3+1);
-            for (int i = charLength; i != 0; i--)
+            get
             {
-                result.Append((char)rnd.Next(0xac00, 0xd7a3+1));
+                //name[0] = (char)rnd.Next(0xAC00, 0xD7A3+1);
+                for (int i = charLength; i != 0; i--)
+                {
+                    result.Append((char)rnd.Next(0xac00, 0xd7a3 + 1));
+                }
+                return result.ToString();
             }
-            return result.ToString();
         }
     }
 }

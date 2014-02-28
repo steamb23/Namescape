@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Algorithm\Algorithm.cs" />
     <Compile Include="Algorithm\IAlgorithm.cs" />
     <Compile Include="Algorithm\Mod\AlgoRandom.cs" />
