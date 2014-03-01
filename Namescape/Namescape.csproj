@@ -66,6 +66,7 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Algorithm\IAlgorithm.cs" />
+    <Compile Include="Algorithm\Mod\AlgoKoreanName.cs" />
     <Compile Include="Algorithm\Mod\AlgoUnicode.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FormMain.cs">
