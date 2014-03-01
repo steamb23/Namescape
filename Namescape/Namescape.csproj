@@ -65,9 +65,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Algorithm\Algorithm.cs" />
     <Compile Include="Algorithm\IAlgorithm.cs" />
-    <Compile Include="Algorithm\Mod\AlgoRandom.cs" />
     <Compile Include="Algorithm\Mod\AlgoUnicode.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FormMain.cs">
