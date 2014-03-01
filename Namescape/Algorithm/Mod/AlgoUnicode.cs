@@ -12,7 +12,7 @@ namespace Namescape.Algorithm.Mod
         /// <summary>
         /// 유니코드의 한글 범위를 조합합니다.
         /// </summary>
-        /// <param name="setting">설정값을 </param>
+        /// <param name="setting">설정값을 받습니다.</param>
         public AlgoUnicode(Setting setting)
         {
             for (int i = setting.CharLength; i != 0; i--)
