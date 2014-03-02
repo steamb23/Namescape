@@ -39,7 +39,7 @@ namespace Namescape
             }
             else if (ui_algorithmRadio_KoreanName.Checked)
             {
-                algorithm = new Algorithm.Mod.KoreanName(setting);
+                algorithm = new Algorithm.Mod.HanjaName(setting);
             }
             string result = algorithm.Result;
 #if DEBUG
