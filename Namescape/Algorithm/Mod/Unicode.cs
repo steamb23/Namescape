@@ -7,8 +7,8 @@ namespace Namescape.Algorithm.Mod
 {
     class Unicode : Algorithm
     {
-        private const int _unicodeRangeMin = 0xac00;
-        private const int _unicodeRangeMax = 0xd7a3;
+        const int _UNICODE_RANGE_MIN = 0xac00;
+        const int _UNICODE_RANGE_MAX = 0xd7a3;
         /// <summary>
         /// 유니코드의 한글 범위를 조합합니다.
         /// </summary>
@@ -17,7 +17,7 @@ namespace Namescape.Algorithm.Mod
         {
             for (int i = setting.CharLength; i != 0; i--)
             {
-                result.Append((char)random.Next(0xac00, 0xd7a3 + 1));
+                result.Append((char)random.Next(_UNICODE_RANGE_MIN, _UNICODE_RANGE_MAX + 1));
             }
         }
 
