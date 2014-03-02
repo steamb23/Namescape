@@ -37,6 +37,10 @@ namespace Namescape
             {
                 algorithm = new Algorithm.Mod.Unicode(setting);
             }
+            else if (ui_algorithmRadio_KoreanName.Checked)
+            {
+                algorithm = new Algorithm.Mod.KoreanName(setting);
+            }
             string result = algorithm.Result;
 #if DEBUG
             Clipboard.SetText(result);

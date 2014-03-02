@@ -11,8 +11,9 @@ namespace Namescape.Algorithm.Mod
     /// </summary>
     internal class Algorithm : IAlgorithm
     {
-        protected Random random = new Random(DateTime.Now.Millisecond);
-        protected StringBuilder result = new StringBuilder();
+        public Random random = new Random(DateTime.Now.Millisecond);
+        public StringBuilder result = new StringBuilder();
+        public Setting setting;
 
         string IAlgorithm.Result
         {

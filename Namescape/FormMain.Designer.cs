@@ -47,6 +47,7 @@
             this.ui_ResultBox = new System.Windows.Forms.RichTextBox();
             this.ui_contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ui_복사ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ui_algorithmRadio_KoreanName = new System.Windows.Forms.RadioButton();
             this.ui_groupBox_Setting.SuspendLayout();
             this.ui_tableLayoutPanel1.SuspendLayout();
             this.ui_flowLayoutPanel1.SuspendLayout();
@@ -172,6 +173,7 @@
             // 
             this.ui_algorithmPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ui_algorithmPanel.Controls.Add(this.ui_algorithmRadio_Unicode);
+            this.ui_algorithmPanel.Controls.Add(this.ui_algorithmRadio_KoreanName);
             this.ui_algorithmPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.ui_algorithmPanel.Location = new System.Drawing.Point(7, 23);
             this.ui_algorithmPanel.Name = "ui_algorithmPanel";
@@ -260,6 +262,18 @@
             this.ui_복사ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.ui_복사ToolStripMenuItem.Text = "복사(&C)";
             // 
+            // ui_algorithmRadio_KoreanName
+            // 
+            this.ui_algorithmRadio_KoreanName.AutoSize = true;
+            this.ui_algorithmRadio_KoreanName.Location = new System.Drawing.Point(3, 28);
+            this.ui_algorithmRadio_KoreanName.Name = "ui_algorithmRadio_KoreanName";
+            this.ui_algorithmRadio_KoreanName.Size = new System.Drawing.Size(77, 19);
+            this.ui_algorithmRadio_KoreanName.TabIndex = 2;
+            this.ui_algorithmRadio_KoreanName.TabStop = true;
+            this.ui_algorithmRadio_KoreanName.Text = "한글 이름";
+            this.ui_toolTip.SetToolTip(this.ui_algorithmRadio_KoreanName, "인명용 한자표에 나와있는 한자들을 한글로 옮겨 랜덤으로 조합합니다.");
+            this.ui_algorithmRadio_KoreanName.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AcceptButton = this.ui_button_Create;
@@ -316,5 +330,6 @@
         private System.Windows.Forms.ContextMenuStrip ui_contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ui_복사ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ui_toolStripMenuItem1;
+        private System.Windows.Forms.RadioButton ui_algorithmRadio_KoreanName;
     }
 }

@@ -15,7 +15,7 @@ namespace Namescape.Algorithm.Mod
         /// <param name="setting">설정값을 받습니다.</param>
         public Unicode(Setting setting)
         {
-            for (int i = setting.CharLength; i != 0; i--)
+            for (int i = 0; i != setting.CharLength; i++)
             {
                 result.Append((char)random.Next(_UNICODE_RANGE_MIN, _UNICODE_RANGE_MAX + 1));
             }
