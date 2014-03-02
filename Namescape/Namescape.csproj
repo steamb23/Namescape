@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,10 +68,10 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Algorithm\Algorithm.cs" />
     <Compile Include="Algorithm\IAlgorithm.cs" />
-    <Compile Include="Algorithm\Mod\AlgoRandom.cs" />
-    <Compile Include="Algorithm\Mod\AlgoUnicode.cs" />
+    <Compile Include="Algorithm\Mod\KoreanName.cs" />
+    <Compile Include="Algorithm\Algorithm.cs" />
+    <Compile Include="Algorithm\Mod\Unicode.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>

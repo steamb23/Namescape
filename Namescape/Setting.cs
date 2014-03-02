@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Namescape
 {
-    class Setting
+    struct Setting
     {
         int charLength;
-        public Setting(decimal charLength)
+        public Setting(int charLength)
         {
-            this.charLength = (int)charLength;
+            this.charLength = charLength;
         }
         public int CharLength
         {

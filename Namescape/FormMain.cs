@@ -19,7 +19,7 @@ namespace Namescape
         {
             get
             {
-                return (int)this.charLength.Value;
+                return (int)this.ui_charLength.Value;
             }
         }
 
@@ -30,33 +30,36 @@ namespace Namescape
         private void buttonComplete_Click(object sender, EventArgs e)
         {
             Algorithm.IAlgorithm algorithm = null;
-            string result = "a";
-            //알고리즘 구분 :)
+            Setting setting = new Setting(CharLength);
 
-            if (algorithmRadio_Unicode.Checked)
+            //라디오 버튼 확인
+            if (ui_algorithmRadio_Unicode.Checked)
             {
-                algorithm = new Algorithm.Mod.AlgoUnicode(new Setting(this.charLength.Value));
+                algorithm = new Algorithm.Mod.Unicode(setting);
             }
-            //null인지 체크
+            else if (ui_algorithmRadio_KoreanName.Checked)
+            {
+                algorithm = new Algorithm.Mod.KoreanName(setting);
+            }
+            string result = algorithm.Result;
 #if DEBUG
-            result = algorithm.Result;
+            Clipboard.SetText(result);
+            ui_ResultBox.Text = result;
 #else
-            try
+            try //이래야 배포후 문제생겼을 때 처리 쉬워짐
             {
-                algorithm.Run();
+                Clipboard.SetText(result);
+                ResultBox.Text = result;
             }
-            catch(NullReferenceException except)
+            catch(NullReferenceException except) //Null은 체크해야..
             {
                 Dialog.Oops(except);
             }
             catch(NotImplementedException except)
             {
-                Dialog.Oops(except, "제작자가 깜박한듯 -ㅅ-");
+                Dialog.Oops(except, "제작자가 구현을 깜박한듯 -ㅅ-");
             }
 #endif
-            //Console.WriteLine(result);
-            Clipboard.SetText(result);
-            ResultBox.Text = result;
 
         }
 
