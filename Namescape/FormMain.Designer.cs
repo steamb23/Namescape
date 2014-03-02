@@ -39,6 +39,7 @@
             this.ui_algorithmBox = new System.Windows.Forms.GroupBox();
             this.ui_algorithmPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ui_algorithmRadio_Unicode = new System.Windows.Forms.RadioButton();
+            this.ui_algorithmRadio_KoreanName = new System.Windows.Forms.RadioButton();
             this.ui_menuStrip = new System.Windows.Forms.MenuStrip();
             this.ui_HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ui_toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@
             this.ui_ResultBox = new System.Windows.Forms.RichTextBox();
             this.ui_contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ui_복사ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ui_algorithmRadio_KoreanName = new System.Windows.Forms.RadioButton();
             this.ui_groupBox_Setting.SuspendLayout();
             this.ui_tableLayoutPanel1.SuspendLayout();
             this.ui_flowLayoutPanel1.SuspendLayout();
@@ -192,6 +192,18 @@
             this.ui_toolTip.SetToolTip(this.ui_algorithmRadio_Unicode, "유니코드에있는 모든 한글을 랜덤으로 조합합니다.");
             this.ui_algorithmRadio_Unicode.UseVisualStyleBackColor = true;
             // 
+            // ui_algorithmRadio_KoreanName
+            // 
+            this.ui_algorithmRadio_KoreanName.AutoSize = true;
+            this.ui_algorithmRadio_KoreanName.Location = new System.Drawing.Point(3, 28);
+            this.ui_algorithmRadio_KoreanName.Name = "ui_algorithmRadio_KoreanName";
+            this.ui_algorithmRadio_KoreanName.Size = new System.Drawing.Size(77, 19);
+            this.ui_algorithmRadio_KoreanName.TabIndex = 2;
+            this.ui_algorithmRadio_KoreanName.TabStop = true;
+            this.ui_algorithmRadio_KoreanName.Text = "한자 이름";
+            this.ui_toolTip.SetToolTip(this.ui_algorithmRadio_KoreanName, "인명용 한자표에 나와있는 한자들을 한글로 옮겨 랜덤으로 조합합니다.");
+            this.ui_algorithmRadio_KoreanName.UseVisualStyleBackColor = true;
+            // 
             // ui_menuStrip
             // 
             this.ui_menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -261,18 +273,6 @@
             this.ui_복사ToolStripMenuItem.Name = "ui_복사ToolStripMenuItem";
             this.ui_복사ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.ui_복사ToolStripMenuItem.Text = "복사(&C)";
-            // 
-            // ui_algorithmRadio_KoreanName
-            // 
-            this.ui_algorithmRadio_KoreanName.AutoSize = true;
-            this.ui_algorithmRadio_KoreanName.Location = new System.Drawing.Point(3, 28);
-            this.ui_algorithmRadio_KoreanName.Name = "ui_algorithmRadio_KoreanName";
-            this.ui_algorithmRadio_KoreanName.Size = new System.Drawing.Size(77, 19);
-            this.ui_algorithmRadio_KoreanName.TabIndex = 2;
-            this.ui_algorithmRadio_KoreanName.TabStop = true;
-            this.ui_algorithmRadio_KoreanName.Text = "한글 이름";
-            this.ui_toolTip.SetToolTip(this.ui_algorithmRadio_KoreanName, "인명용 한자표에 나와있는 한자들을 한글로 옮겨 랜덤으로 조합합니다.");
-            this.ui_algorithmRadio_KoreanName.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
