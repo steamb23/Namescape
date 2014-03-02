@@ -19,7 +19,7 @@ namespace Namescape
         {
             get
             {
-                return (int)this.charLength.Value;
+                return (int)this.ui_charLength.Value;
             }
         }
 
@@ -33,14 +33,14 @@ namespace Namescape
             Setting setting = new Setting(CharLength);
 
             //라디오 버튼 확인
-            if (algorithmRadio_Unicode.Checked)
+            if (ui_algorithmRadio_Unicode.Checked)
             {
                 algorithm = new Algorithm.Mod.Unicode(setting);
             }
             string result = algorithm.Result;
 #if DEBUG
             Clipboard.SetText(result);
-            ResultBox.Text = result;
+            ui_ResultBox.Text = result;
 #else
             try //이래야 배포후 문제생겼을 때 처리 쉬워짐
             {
