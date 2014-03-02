@@ -66,8 +66,9 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Algorithm\IAlgorithm.cs" />
-    <Compile Include="Algorithm\Mod\AlgoKoreanName.cs" />
-    <Compile Include="Algorithm\Mod\AlgoUnicode.cs" />
+    <Compile Include="Algorithm\Mod\KoreanName.cs" />
+    <Compile Include="Algorithm\Algorithm.cs" />
+    <Compile Include="Algorithm\Mod\Unicode.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>

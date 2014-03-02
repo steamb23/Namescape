@@ -35,7 +35,7 @@ namespace Namescape
             //라디오 버튼 확인
             if (algorithmRadio_Unicode.Checked)
             {
-                algorithm = new Algorithm.Mod.AlgoUnicode(setting);
+                algorithm = new Algorithm.Mod.Unicode(setting);
             }
             string result = algorithm.Result;
 #if DEBUG
